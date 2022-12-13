@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app-color{
+  background-color: #e3f2fd;
+}
+
+.container-fluid{
+  display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid black; */
+    margin-left: 40px;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+  color: var(--bs-navbar-active-color);
+  text-decoration-line: underline;
+  /* line-height: 1; */
+}
