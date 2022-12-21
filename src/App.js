@@ -10,8 +10,8 @@ function App() {
       <Navbar title = "TextUtils" aboutText = "About us"/>
       {/* <Navbar/> */}
       {/* <Navbar aboutText = "About us"/> */}
-      <div className = "container my-3">
-      <TextBox heading = "Easy Text Editor"/>
+      <div className = "container my-3" id = "page_content">
+      <TextBox heading = "Easy Text Analysis and Editing"/>
       </div>
     </>
   );
