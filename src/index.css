@@ -70,7 +70,7 @@ code {
   /* border: 2px solid black; */
   display: flex;
   justify-content: space-between;
-  width: 245px;
+  width: 529px;
   position: relative;
   top: 18px;
   /* left: 194px; */
@@ -90,7 +90,7 @@ code {
 #text_analysis{
   /* border: 2px solid black; */
   position: relative;
-  top: 65px;
+  top: 90px;
   width: 914px;
   /* margin: auto; */
 }
@@ -108,7 +108,7 @@ code {
   width: 600px;
   position: relative;
   /* top: -400px; */
-  bottom: 408px;
+  bottom: 437px;
   left: 827px;
 }
 
@@ -130,3 +130,26 @@ code {
 .input_box{
   margin-top: 47px;
 }
+
+.resize_btn{
+  padding: 5px 31px;
+}
+
+#text_edit{
+  display: flex;
+  flex-direction: column;
+}
+
+#find_replace_area {
+  position: relative;
+  top: 46px;
+  display: flex;
+  justify-content: space-between;
+  width: 673px;
+}
+
+input {
+  margin-left: -4px;
+  padding: 4px;
+}
+
