@@ -17,9 +17,9 @@ code {
     monospace;
 }
 
-.app-color{
+/* .app-color{
   background-color: #e3f2fd;
-}
+} */
 
 .container-fluid{
   display: flex;
@@ -47,7 +47,7 @@ code {
   background-color: #fff;
   background-clip: padding-box;
   /* border: 1px solid #ced4da; */
-  border: 1px solid #0dcaf0;
+  border: 1px solid rgba(59,130,246,.5);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -71,13 +71,20 @@ code {
   display: flex;
   justify-content: space-between;
   width: 529px;
+  /* width: 730px; */
   position: relative;
   top: 18px;
   /* left: 194px; */
 }
 
-#button_box .my_btn_style{
+.my_btn_style{
   box-shadow: 2px 2px 3px #1e1e1e45;
+  background-color: rgba(59,130,246,.5);
+}
+
+.my_btn_style:hover{
+  background-color: rgba(98, 158, 255, 0.5);
+
 }
 
 /* #ta_heading{
@@ -108,7 +115,7 @@ code {
   width: 600px;
   position: relative;
   /* top: -400px; */
-  bottom: 437px;
+  bottom: 439px;
   left: 827px;
 }
 
@@ -118,13 +125,13 @@ code {
 }
 
 #preview_display{
-  border: 2px solid cyan;
+  border: 2px solid rgba(59,130,246,.5);
   height: 500px;
 }
 
 .preview_box{
   width: 97%;
-  border: 1px solid #0dcaf0;
+  border: 1px solid rgba(59,130,246,.5);
 }
 
 .input_box{
@@ -153,3 +160,11 @@ input {
   padding: 4px;
 }
 
+nav{
+  /* background-color: #0dcaf0; */
+  background-color: rgba(59,130,246,.5);
+}
+
+#dkm_btn{
+  margin-right: 40px;
+}

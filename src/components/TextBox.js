@@ -60,30 +60,58 @@ export default function TextBox(props){
         setText(updateText);
     }
 
+    // mystyle object in useState hook
+    // const [mystyle, setMyStyle] = useState({
+    //     color: 'black',
+    //     backgroundColor: 'white'
+    // })
+
+    // useState hook to change button text
+    //const[btnText, setBtnText] = useState("Enable Dark Mode")
+    
+    // function to handle click event for dark mode button
+    // const toggleStyle = (event) =>{
+    //     if(mystyle.color === 'black'){
+    //         setMyStyle({
+    //             color: 'white',
+    //             backgroundColor: 'black'
+    //         })
+    //         setBtnText("Enable Light Mode");
+    //     }
+    //     else{
+    //         setMyStyle({
+    //             color: 'black',
+    //             backgroundColor: 'white'
+    //         })
+    //         setBtnText("Enable Dark Mode");
+    //     }
+    // }
+
     return(
         <>
             {/*text editing*/}
-            <section id = "text_edit">
+            <section id = "text_edit" style = {{color: props.mode==='light'?'black':'white'}}>
                 <h2 >{props.heading}</h2>
-                <p >Easily convert your text to uppercase, lowercase, titlecase, get count of words and characters and get read time</p>
-                <textarea className="form-control input_box" id="exampleFormControlTextarea1" value = {text} onChange = {handleOnChange} rows="8"></textarea>
+                <p >Easily convert your text to uppercase, lowercase, titlecase, find and replace words, get count of words and characters and get read time.</p>
+                <textarea className="form-control input_box" id="exampleFormControlTextarea1" value = {text} onChange = {handleOnChange} style = {{backgroundColor: props.mode==='light'?'white':'rgb(35 35 35)', color: props.mode==='light'?'black':'white'}} rows="8"></textarea>
                 <div id = "button_box">
-                    <button className = "btn btn-info my_btn_style"  onClick = {handleUppercase}>[A] Uppercase</button>
-                    <button className = "btn btn-info my_btn_style" onClick = {handleLowercase}>[a] Lowercase</button>
-                    <button className = "btn btn-info my_btn_style resize_btn" onClick = {handleTitlecase}>Titlecase</button>
-                    <button className = "btn btn-info my_btn_style resize_btn" id  = "clear_btn" onClick = {handleClear}><i class="fa fa-eraser"></i> Clear</button>
+                    <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleUppercase}>[A] Uppercase</button>
+                    <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleLowercase}>[a] Lowercase</button>
+                    <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleTitlecase}>Titlecase</button>
+                    <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} id  = "clear_btn" onClick = {handleClear}><i className="fa fa-eraser"></i> Clear</button>
+                    {/* <button className = "btn btn-info my_btn_style resize_btn" onClick = {toggleStyle}>{btnText}</button> */}
                 </div>
                 <div id = "find_replace_area">
                     <span>Find</span>
-                    <input type = "text" value = {fText} onChange = {handleFind}/>
+                    <input type = "text" value = {fText} style = {{backgroundColor: props.mode==='light'?'white':'rgb(35 35 35)', color: props.mode==='light'?'black':'white'}} onChange = {handleFind}/>
                     <span>Replace</span>
-                    <input type = "text" value = {rText} onChange = {handleReplace}/>
-                    <button className = "btn btn-info my_btn_style resize_btn" onClick = {handleClickReplace}>Replace</button>
+                    <input type = "text" value = {rText} style = {{backgroundColor: props.mode==='light'?'white':'rgb(35 35 35)', color: props.mode==='light'?'black':'white'}} onChange = {handleReplace}/>
+                    <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleClickReplace}>Replace</button>
                 </div>
             </section>
 
             {/*text analysis*/}
-            <section id = "text_analysis">
+            <section id = "text_analysis" style = {{color: props.mode==='light'?'black':'white'}}>
                 <h4 id = "ta_heading">Text Analysis</h4>
                 <p>Number of words: {text === ""? 0:text.split(" ").length}</p>
                 <p>Number of characters: {text.length}</p>
@@ -91,10 +119,12 @@ export default function TextBox(props){
             </section>
 
             {/*text preview*/}
-            <section id = "text_preview">
+            {/* <section id = "text_preview" style = {mystyle}> */}
+            <section id = "text_preview" style = {{color: props.mode==='light'?'black':'white'}}>
                 <h4 id = "tp_heading">Preview</h4>
+                <textarea className="form-control preview_box" id="exampleFormControlTextarea1" style = {{backgroundColor: props.mode==='light'?'white':'rgb(35 35 35)', color: props.mode==='light'?'black':'white'}} rows = "19" cols= "200" value={text} onChange = {handleOnChange}></textarea>
                 {/* <div id = "preview_display">{text}</div> */}
-                <textarea className="form-control preview_box" id="exampleFormControlTextarea1" rows = "19" cols= "200" value={text}></textarea>
+                {/* <textarea className="form-control preview_box" id="exampleFormControlTextarea1" rows = "19" cols= "200" value={text} style = {mystyle}></textarea> */}
             </section>
         </> 
     )
