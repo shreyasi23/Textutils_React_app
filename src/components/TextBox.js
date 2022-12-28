@@ -105,13 +105,13 @@ export default function TextBox(props){
             {/*text editing*/}
             <section id = "text_edit" style = {{color: props.mode==='light'?'black':'white'}}>
                 <h2 >{props.heading}</h2>
-                <p >Easily convert your text to uppercase, lowercase, titlecase, find and replace words, get count of words and characters and get read time.</p>
+                <p >Easily convert your text to uppercase, lowercase, titlecase, remove extra spaces, find and replace words, get count of words and characters and get read time.</p>
                 <textarea className="form-control input_box" id="exampleFormControlTextarea1" value = {text} onChange = {handleOnChange} style = {{backgroundColor: props.mode==='light'?'white':'rgb(35 35 35)', color: props.mode==='light'?'black':'white'}} rows="8"></textarea>
                 <div id = "button_box">
                     <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleUppercase}>[A] Uppercase</button>
                     <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleLowercase}>[a] Lowercase</button>
                     <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleTitlecase}>Titlecase</button>
-                    <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleCopy}><i className="fa fa-clipboard"></i>Copy</button>
+                    <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleCopy}><i className="fa fa-clipboard"></i> Copy</button>
                     <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} id  = "clear_btn" onClick = {handleClear}><i className="fa fa-eraser"></i> Clear</button>
                     <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} id = "extra_space_btn" onClick = {handleExtraSpace}>Remove extra space</button>
                     {/* <button className = "btn btn-info my_btn_style resize_btn" onClick = {toggleStyle}>{btnText}</button> */}
