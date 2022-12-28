@@ -98,6 +98,7 @@ export default function TextBox(props){
         let input = document.getElementById("exampleFormControlTextarea1");
         input.select();
         navigator.clipboard.writeText(input.value);
+        props.displayAlert("Copied to clipboard","success");
     }
 
     return(
