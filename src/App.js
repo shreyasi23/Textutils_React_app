@@ -3,6 +3,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import TextBox from './components/TextBox';
+import Footer from './components/Footer';
 import React, {useState} from 'react';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <div className = "container my-3" id = "page_content">
       <TextBox heading = "Easy Text Analysis and Editing" mode = {mode}/>
       </div>
+      <Footer mode = {mode}/>
     </>
   );
 }

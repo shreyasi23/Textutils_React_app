@@ -87,6 +87,19 @@ export default function TextBox(props){
     //     }
     // }
 
+    // function to handle click event for remove extra space button
+    const handleExtraSpace = () =>{
+        let updateText = text.split(/[ ]+/);
+        setText(updateText.join(" "));
+    }
+
+    // function to handle click event for copy text
+    const handleCopy = ()=>{
+        let input = document.getElementById("exampleFormControlTextarea1");
+        input.select();
+        navigator.clipboard.writeText(input.value);
+    }
+
     return(
         <>
             {/*text editing*/}
@@ -98,7 +111,9 @@ export default function TextBox(props){
                     <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleUppercase}>[A] Uppercase</button>
                     <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleLowercase}>[a] Lowercase</button>
                     <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleTitlecase}>Titlecase</button>
+                    <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleCopy}><i className="fa fa-clipboard"></i>Copy</button>
                     <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} id  = "clear_btn" onClick = {handleClear}><i className="fa fa-eraser"></i> Clear</button>
+                    <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} id = "extra_space_btn" onClick = {handleExtraSpace}>Remove extra space</button>
                     {/* <button className = "btn btn-info my_btn_style resize_btn" onClick = {toggleStyle}>{btnText}</button> */}
                 </div>
                 <div id = "find_replace_area">
