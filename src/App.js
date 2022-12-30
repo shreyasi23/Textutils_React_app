@@ -11,6 +11,10 @@ function App() {
   const [mode, setMode] = useState('light');
   const [btnText, setBtnText] = useState("Dark mode");
   const [alert, setAlert] = useState(null);
+  // only for practice, exercise 2
+  // const [theme, setTheme] = useState('light');
+  // const [switchText, setSwitchText] = useState("Summer mode");
+
 
   // function to toggle between light and dark mode
   const toggleMode = () =>{
@@ -43,14 +47,32 @@ function App() {
     }, 2000);
   }
 
+  // function for summer theme
+  // const summerTheme = () =>{
+  //   if(theme === 'light'){
+  //     setTheme('summer');
+  //     console.log(theme);
+  //     document.body.style.backgroundColor = '#ffeed5';
+  //     setSwitchText("Light mode");
+  //   }
+  //   else{
+  //     setTheme('light');
+  //     console.log(theme);
+  //     document.body.style.backgroundColor = 'white';
+  //     setSwitchText("Summer mode");
+  //   }
+  // }
+
   return (
     <>
       <Navbar title = "TextUtils" aboutText = "About us" btnText = {btnText} mode = {mode} toggleMode = {toggleMode}/>
+      {/* <Navbar title = "TextUtils" aboutText = "About us" btnText = {btnText} mode = {mode} toggleMode = {toggleMode} summerTheme = {summerTheme} switchText = {switchText} theme = {theme}/> */}
       {/* <Navbar/> */}
       {/* <Navbar aboutText = "About us"/> */}
       <Alert alert = {alert}/>
       <div className = "container my-3" id = "page_content">
       <TextBox heading = "Easy Text Analysis and Editing" mode = {mode} displayAlert = {displayAlert}/>
+      {/* <TextBox heading = "Easy Text Analysis and Editing" mode = {mode} displayAlert = {displayAlert} theme = {theme}/> */}
       </div>
       <Footer mode = {mode}/>
     </>

@@ -108,6 +108,7 @@ export default function TextBox(props){
                 <h2 >{props.heading}</h2>
                 <p >Easily convert your text to uppercase, lowercase, titlecase, remove extra spaces, find and replace words, get count of words and characters and get read time.</p>
                 <textarea className="form-control input_box" id="exampleFormControlTextarea1" value = {text} onChange = {handleOnChange} style = {{backgroundColor: props.mode==='light'?'white':'rgb(35 35 35)', color: props.mode==='light'?'black':'white'}} rows="8"></textarea>
+                {/* <textarea className="form-control input_box" id="exampleFormControlTextarea1" value = {text} onChange = {handleOnChange} style = {{backgroundColor: props.theme==='light'?'white':'#ffeed5', borderColor: props.theme==='light'?'rgba(59,130,246,.5)':'#FD7F20'}} rows="8"></textarea> */}
                 <div id = "button_box">
                     <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleUppercase}>[A] Uppercase</button>
                     <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleLowercase}>[a] Lowercase</button>
@@ -115,14 +116,24 @@ export default function TextBox(props){
                     <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleCopy}><i className="fa fa-clipboard"></i> Copy</button>
                     <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} id  = "clear_btn" onClick = {handleClear}><i className="fa fa-eraser"></i> Clear</button>
                     <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} id = "extra_space_btn" onClick = {handleExtraSpace}>Remove extra space</button>
+
+                    {/* <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleUppercase} style = {{backgroundColor: props.theme === 'light'?'rgba(59,130,246,.5)':'#FD7F20'}}>[A] Uppercase</button>
+                    <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleLowercase} style = {{backgroundColor: props.theme === 'light'?'rgba(59,130,246,.5)':'#FD7F20'}}>[a] Lowercase</button>
+                    <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleTitlecase} style = {{backgroundColor: props.theme === 'light'?'rgba(59,130,246,.5)':'#FD7F20'}}>Titlecase</button>
+                    <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleCopy} style = {{backgroundColor: props.theme === 'light'?'rgba(59,130,246,.5)':'#FD7F20'}}><i className="fa fa-clipboard"></i> Copy</button>
+                    <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} id  = "clear_btn" onClick = {handleClear} style = {{backgroundColor: props.theme === 'light'?'rgba(59,130,246,.5)':'#FD7F20'}}><i className="fa fa-eraser"></i> Clear</button>
+                    <button className = {`btn my_btn_style text-${props.mode ==='light'?'dark':'light'}`} id = "extra_space_btn" onClick = {handleExtraSpace} style = {{backgroundColor: props.theme === 'light'?'rgba(59,130,246,.5)':'#FD7F20'}}>Remove extra space</button> */}
                     {/* <button className = "btn btn-info my_btn_style resize_btn" onClick = {toggleStyle}>{btnText}</button> */}
                 </div>
                 <div id = "find_replace_area">
                     <span>Find</span>
                     <input type = "text" value = {fText} style = {{backgroundColor: props.mode==='light'?'white':'rgb(35 35 35)', color: props.mode==='light'?'black':'white'}} onChange = {handleFind}/>
+                    {/* <input type = "text" value = {fText} style = {{backgroundColor: props.theme==='light'?'white':'#ffeed5'}} onChange = {handleFind}/> */}
                     <span>Replace</span>
                     <input type = "text" value = {rText} style = {{backgroundColor: props.mode==='light'?'white':'rgb(35 35 35)', color: props.mode==='light'?'black':'white'}} onChange = {handleReplace}/>
+                    {/* <input type = "text" value = {rText} style = {{backgroundColor: props.theme==='light'?'white':'#ffeed5', color: props.mode==='light'?'black':'white'}} onChange = {handleReplace}/> */}
                     <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleClickReplace}>Replace</button>
+                    {/* <button className = {`btn my_btn_style resize_btn text-${props.mode ==='light'?'dark':'light'}`} onClick = {handleClickReplace} style = {{backgroundColor: props.theme === 'light'?'rgba(59,130,246,.5)':'#FD7F20'}}>Replace</button> */}
                 </div>
             </section>
 
@@ -139,6 +150,7 @@ export default function TextBox(props){
             <section id = "text_preview" style = {{color: props.mode==='light'?'black':'white'}}>
                 <h4 id = "tp_heading">Preview</h4>
                 <textarea className="form-control preview_box" id="exampleFormControlTextarea1" style = {{backgroundColor: props.mode==='light'?'white':'rgb(35 35 35)', color: props.mode==='light'?'black':'white'}} rows = "19" cols= "200" value={text} onChange = {handleOnChange}></textarea>
+                {/* <textarea className="form-control preview_box" id="exampleFormControlTextarea1" style = {{backgroundColor: props.theme==='light'?'white':'#ffeed5', borderColor: props.theme==='light'?'rgba(59,130,246,.5)':'#FD7F20'}} rows = "19" cols= "200" value={text} onChange = {handleOnChange}></textarea> */}
                 {/* <div id = "preview_display">{text}</div> */}
                 {/* <textarea className="form-control preview_box" id="exampleFormControlTextarea1" rows = "19" cols= "200" value={text} style = {mystyle}></textarea> */}
             </section>
