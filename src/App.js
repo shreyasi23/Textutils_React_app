@@ -3,9 +3,15 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import TextBox from './components/TextBox';
+import About from './components/About';
 import Footer from './components/Footer';
 import Alert from './components/Alert';
 import React, {useState} from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+}from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -65,16 +71,21 @@ function App() {
 
   return (
     <>
-      <Navbar title = "TextUtils" aboutText = "About us" btnText = {btnText} mode = {mode} toggleMode = {toggleMode}/>
-      {/* <Navbar title = "TextUtils" aboutText = "About us" btnText = {btnText} mode = {mode} toggleMode = {toggleMode} summerTheme = {summerTheme} switchText = {switchText} theme = {theme}/> */}
-      {/* <Navbar/> */}
-      {/* <Navbar aboutText = "About us"/> */}
-      <Alert alert = {alert}/>
-      <div className = "container my-3" id = "page_content">
-      <TextBox heading = "Easy Text Analysis and Editing" mode = {mode} displayAlert = {displayAlert}/>
-      {/* <TextBox heading = "Easy Text Analysis and Editing" mode = {mode} displayAlert = {displayAlert} theme = {theme}/> */}
-      </div>
-      <Footer mode = {mode}/>
+      <Router>
+        <Navbar title = "TextUtils" aboutText = "About us" btnText = {btnText} mode = {mode} toggleMode = {toggleMode}/>
+        {/* <Navbar title = "TextUtils" aboutText = "About us" btnText = {btnText} mode = {mode} toggleMode = {toggleMode} summerTheme = {summerTheme} switchText = {switchText} theme = {theme}/> */}
+        {/* <Navbar/> */}
+        {/* <Navbar aboutText = "About us"/> */}
+        <Alert alert = {alert}/>
+        <div className = "container my-3" id = "page_content">
+        <Routes>
+          <Route exact path="/" element={<TextBox heading = "Easy Text Analysis and Editing" mode = {mode} displayAlert = {displayAlert}/>}></Route>
+          <Route exact path="/about" element={<About mode = {mode}/>} ></Route>
+        </Routes>
+        {/* <TextBox heading = "Easy Text Analysis and Editing" mode = {mode} displayAlert = {displayAlert} theme = {theme}/> */}
+        </div>
+        <Footer mode = {mode}/>
+      </Router>
     </>
   );
 }
