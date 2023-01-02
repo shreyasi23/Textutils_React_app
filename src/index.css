@@ -136,7 +136,7 @@ code {
 }
 
 .input_box{
-  margin-top: 47px;
+  margin-top: 30px;
 }
 
 .resize_btn{
@@ -187,4 +187,8 @@ footer span{
   /* border: 2px solid black; */
   display:inline-block;
   margin: 8px 688px;
+}
+
+#alert_box{
+  height: 20px;
 }
