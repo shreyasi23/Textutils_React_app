@@ -95,9 +95,9 @@ export default function TextBox(props){
 
     // function to handle click event for copy text
     const handleCopy = ()=>{
-        let input = document.getElementById("exampleFormControlTextarea1");
-        input.select();
-        navigator.clipboard.writeText(input.value);
+        // let input = document.getElementById("exampleFormControlTextarea1");
+        // input.select();
+        navigator.clipboard.writeText(text);
         props.displayAlert("Copied to clipboard","success");
     }
 
@@ -140,9 +140,9 @@ export default function TextBox(props){
             {/*text analysis*/}
             <section id = "text_analysis" style = {{color: props.mode==='light'?'black':'white'}}>
                 <h4 id = "ta_heading">Text Analysis</h4>
-                <p>Number of words: {text.split(" ").filter((element)=>{return element.length !== 0}).length}</p>
+                <p>Number of words: {text.split(/\s+/ ).filter((element)=>{return element.length !== 0}).length}</p>
                 <p>Number of characters: {text.length}</p>
-                <p>Read time: {0.008 * (text.split(" ").filter((element)=>{return element.length !== 0}).length)} minutes</p>
+                <p>Read time: {0.008 * (text.split(/\s+/).filter((element)=>{return element.length !== 0}).length)} minutes</p>
             </section>
 
             {/*text preview*/}

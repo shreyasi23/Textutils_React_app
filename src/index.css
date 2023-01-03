@@ -35,6 +35,17 @@ code {
   /* line-height: 1; */
 }
 
+.myNavItem{
+  text-decoration: none;
+  padding: 10px;
+  color: rgb(28, 28, 28);
+}
+
+.myNavItem:hover, .active{
+  color:black;
+  text-decoration: underline;
+}
+
 .form-control {
   display: block;
   width: 60%;
